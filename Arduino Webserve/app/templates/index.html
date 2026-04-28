@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arduino Webserve</title>
+</head>
+<body>
+<h1 class = "title">Arduino Webserve</h1>
+<h2 class = "subtitle">Welcome to the Arduino Webserve!</h2>
+<p class = "paragraph">If you would like to be added to the database, please fill out the form below.</p>
+<form action="{{ url_for('main.register') }}" method="POST">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name"><br>
+    <label for="message">Message:</label><br>
+    <input type="text" id="message" name="message"><br><br>
+    <input type="submit" value="Submit">
+    {% for entry in messages %}
+    <div class="message-box">
+        <strong>{{ entry.name }}</strong> 
+        <p>Message: {{ entry.message }}</p>
+    </div>
+{% endfor %}
+</body>
+</html>
