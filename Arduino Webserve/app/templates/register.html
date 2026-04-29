@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arduino Webserve</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <h1 class="title">Arduino Webserve</h1>
     <h2 class="subtitle">Welcome to the Arduino Webserve!</h2>
-    <p class="paragraph">If you would like to be added to the database, please fill out the form below.</p>
+    <p class="paragraph">If you would like to add a message, please fill out the form below!</p>
 
     <form action="{{ url_for('main.register') }}" method="POST">
         <label for="name">Name:</label><br>
@@ -21,14 +22,16 @@
     </form>
 
     <hr> <h3>Recent Entries:</h3>
+   <div class="logs">
+    
     {% for entry in messages %}
-    <div class="message-box" style="border: 1px solid #ccc; margin: 10px; padding: 10px;">
-        <strong>{{ entry.name }}</strong> 
-        <p>Message: {{ entry.message }}</p>
+    <div class="message-box" data-id="{{ loop.index }}">
+        <strong>User: {{ entry.name }}</strong> 
+        <br>
+        <p>> {{ entry.message or "No Message Provided" }}</p>
     </div>
-    {% else %}
-    <p>No entries found in the database yet.</p>
     {% endfor %}
+</div>
 
 </body>
 </html>
