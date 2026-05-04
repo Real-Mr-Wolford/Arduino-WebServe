@@ -9,6 +9,7 @@
 <body>
 <h1 class = "title">Arduino Webserve</h1>
 <h2 class = "subtitle">Welcome to the Arduino Webserve!</h2>
+<a href="{{url_for('main.game')}}" method = "GET"><button>Play a game!</button></a>
     <p class="paragraph">If you would like to add a message, please fill out the form below!</p>
 <form action="{{ url_for('main.register') }}" method="POST">
     <label for="name">Name:</label><br>
