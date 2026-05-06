@@ -4,9 +4,12 @@ This repository contains a Flask-based web server designed for use in a **cybers
 
 The server operates over **HTTP**, intentionally lacking encryption to facilitate the **interception of data** between the client and server. This setup is ideal for analyzing packet captures and studying man-in-the-middle (MITM) attack vectors within a controlled lab setting.
 
-##Notes on Arduino Uno Q and this readme
+
+
+### Notes on Arduino Uno Q and this readme
 
 The Arduino Uno Q runs a full Debian distro. This readme is built for a linux machine, though this program can also be run with any Python interpreter given that the correct libraries are installed. I usually run in VS Code on a Windows Machine during CI/CD.
+
 ---
 
 ### Installation and Setup
